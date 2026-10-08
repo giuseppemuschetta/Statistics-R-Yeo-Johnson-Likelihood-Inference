@@ -50,12 +50,11 @@ The analysis covers the identity case at λ = 1, the different curvature for λ 
 
 The central transformation is implemented directly in [`functions.R`](functions.R), including its logarithmic special cases.
 
-<details>
-<summary><strong>The transformation behind the implementation</strong></summary>
+### The transformation behind the implementation
 
 For an observation $x$, the Yeo–Johnson transformation is
 
-$$
+```math
 T_\lambda(x)=
 \begin{cases}
 \dfrac{(x+1)^\lambda-1}{\lambda}, & x\geq 0,\ \lambda\neq 0,\\[6pt]
@@ -63,11 +62,9 @@ T_\lambda(x)=
 -\dfrac{(1-x)^{2-\lambda}-1}{2-\lambda}, & x<0,\ \lambda\neq 2,\\[6pt]
 -\log(1-x), & x<0,\ \lambda=2.
 \end{cases}
-$$
+```
 
 At $\lambda=1$, $T_\lambda(x)=x$. The same family therefore includes the untransformed observations as a reference case.
-
-</details>
 
 ## 3. From transformed data to statistical inference
 
@@ -84,22 +81,20 @@ The analysis follows the statistical question through a complete sequence:
 
 The likelihood includes the **Jacobian contribution**, connecting the transformation to the probability model for the original observations.
 
-<details>
-<summary><strong>Likelihood formulation</strong></summary>
+### Likelihood formulation
 
 Under a Gaussian model for the transformed observations, the log-likelihood is
 
-$$
+```math
+\begin{aligned}
 \ell(\lambda,\mu,\sigma^2\mid x)
-=-\frac{n}{2}\log(2\pi)
--\frac{n}{2}\log(\sigma^2)
--\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left[T_\lambda(x_i)-\mu\right]^2
-+(\lambda-1)\sum_{i=1}^{n}\operatorname{sgn}(x_i)\log(1+|x_i|).
-$$
+&=-\frac{n}{2}\log(2\pi)-\frac{n}{2}\log(\sigma^2)\\[6pt]
+&\quad-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left[T_\lambda(x_i)-\mu\right]^2\\[6pt]
+&\quad+(\lambda-1)\sum_{i=1}^{n}\operatorname{sgn}(x_i)\log(1+|x_i|).
+\end{aligned}
+```
 
 The shared `log_likelihood()` function returns the negative log-likelihood for minimization with R's optimization routines.
-
-</details>
 
 ## Technical skills demonstrated
 
