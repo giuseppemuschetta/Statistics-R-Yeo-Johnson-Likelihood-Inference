@@ -90,7 +90,7 @@ Under a Gaussian model for the transformed observations, the log-likelihood is
 \ell(\lambda,\mu,\sigma^2\mid x)
 &=-\frac{n}{2}\log(2\pi)-\frac{n}{2}\log(\sigma^2)\\[6pt]
 &\quad-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left[T_\lambda(x_i)-\mu\right]^2\\[6pt]
-&\quad+(\lambda-1)\sum_{i=1}^{n}\operatorname{sgn}(x_i)\log(1+|x_i|).
+&\quad+(\lambda-1)\sum_{i=1}^{n}\mathrm{sgn}(x_i)\log(1+|x_i|).
 \end{aligned}
 ```
 
