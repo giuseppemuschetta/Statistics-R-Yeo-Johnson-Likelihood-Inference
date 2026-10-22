@@ -7,6 +7,8 @@
 
 **Statistical computing for Data Science: custom power transformations, numerical optimization and likelihood-based analysis in R.**
 
+**[Read the full report (PDF)](REPORT.pdf)**
+
 This project connects mathematical transformation theory with practical statistical inference. Inspired by Yeo and Johnson's *A New Family of Power Transformations to Improve Normality or Symmetry*, it implements power transformations directly in R, investigates their behaviour on synthetic distributions, and develops an inferential analysis of Darwin's classic plant-growth experiment.
 
 The work brings together **distribution geometry, parameter estimation, assumption diagnostics and hypothesis testing** in a coherent investigation of how transformations affect statistical modelling.
@@ -114,6 +116,7 @@ The shared `log_likelihood()` function returns the negative log-likelihood for m
 | [`1st_part.R`](1st_part.R) | Signed-power exploration on a synthetic asymmetric mixture |
 | [`2nd_part.R`](2nd_part.R) | Yeo–Johnson geometry, Box–Cox comparison and transformed-mixture analysis |
 | [`3rd_part.R`](3rd_part.R) | Darwin's paired-data case study and likelihood-based inference |
+| [`REPORT.pdf`](REPORT.pdf) | Full project report: transformation families, likelihood and estimation, results on Darwin's data compared with the original paper |
 | [`paper_TransformNormality.pdf`](paper_TransformNormality.pdf) | Original research paper by Yeo and Johnson |
 
 **Tools:** R, its built-in statistical and graphics functions, `ggplot2` and `gridExtra`. The examples use generated observations or the 15 historical height differences embedded in the source. The scripts produce plots and printed statistics within the R session.
